@@ -2,11 +2,16 @@ import SwiftUI
 
 @available(iOS 14, macOS 11.0, *)
 public struct AnimatedMenuBar: View {
-    @Binding public var selectedIndex: Int
+    @Binding var selectedIndex: Int
     @Namespace private var menuItemTransition
     
-    public var menuItems = [ "Travel", "Nature", "Architecture" ]
+    var menuItems = [ "Travel", "Nature", "Architecture" ]
      
+    public init(selectedIndex: Binding<Int>, menuItems: [String] = [ "Travel", "Nature", "Architecture" ]) {
+        self._selectedIndex = selectedIndex
+        self.menuItems = menuItems
+    }
+    
     public var body: some View {
         
         HStack {
