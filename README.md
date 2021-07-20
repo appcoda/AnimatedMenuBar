@@ -1,3 +1,3 @@
 # AnimatedMenuBar
 
-A description of this package.
+An animated menu bar for SwiftUI
